@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GTA 6 Clipping Guide | AI with Unnati</title>
+<meta name="description" content="A free step-by-step guide by Unnati Tripathi: learn clipping before GTA 6 drops. Three free open-source clipping tools (OpenShorts, AutoClip, Chopify) and three places to get paid (Content Rewards, Whop, Amplify Media).">
+<meta name="theme-color" content="#D02B2F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#D02B2F;
+    --red-deep:#B32226;
+    --cream:#FFF8E7;
+    --cream-2:#FAEEDC;
+    --sage-bg:#F3F0DE;
+    --sage:#7F9478;
+    --ink:#1E1E1E;
+    --ink-soft:#4A4644;
+    --line:#E7DDC9;
+    --code:#1A1714;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:18px;line-height:1.65;-webkit-font-smoothing:antialiased;padding:env(safe-area-inset-top,0) 0 env(safe-area-inset-bottom,0)}
+  a{color:inherit}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+  .display{font-family:"Anton","Impact","Arial Narrow Bold",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.01em;line-height:1}
+  .eyebrow{font-family:"Anton","Impact",sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:15px;color:var(--red)}
+  .wrap{max-width:920px;margin:0 auto;padding:0 20px}
+
+  /* Header */
+  header.site{border-bottom:2px solid var(--line);padding:28px 0 20px;text-align:center}
+  header.site .brand{font-size:clamp(28px,6vw,40px);color:var(--red);text-decoration:none}
+  header.site nav{margin-top:12px;display:flex;justify-content:center;flex-wrap:wrap;gap:6px 26px;font-weight:500;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+  header.site nav a{text-decoration:none;color:var(--ink-soft)}
+  header.site nav a:hover{color:var(--red)}
+
+  /* Hero */
+  .hero{background:var(--red);color:var(--cream);padding:60px 0 54px}
+  .byline{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;font-size:17px}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);padding:7px 14px;text-decoration:none;font-family:"Anton",sans-serif;letter-spacing:.12em;font-size:14px;text-transform:uppercase;color:var(--cream)}
+  .chip:hover{background:rgba(255,255,255,.24)}
+  .chip svg{width:14px;height:14px}
+  .tag{display:inline-block;margin-top:30px;background:var(--cream);color:var(--red);padding:9px 16px 7px;font-size:16px;letter-spacing:.14em}
+  .hero h1{font-size:clamp(46px,11vw,98px);margin:20px 0 24px;max-width:13ch}
+  .hero p.lede{font-size:clamp(19px,2.6vw,23px);max-width:44ch;margin:0;color:#FFF3E6}
+  .countdown{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px}
+  .countdown div{background:var(--cream);color:var(--ink);padding:14px 18px 12px;min-width:120px}
+  .countdown b{display:block;font-family:"Anton",sans-serif;font-weight:400;font-size:34px;line-height:1;color:var(--red)}
+  .countdown span{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+
+  /* Sections */
+  section.block{padding:66px 0 6px}
+  section.block h2{font-size:clamp(36px,7vw,58px);margin:12px 0 16px}
+  .intro{max-width:62ch;color:var(--ink-soft);margin:0 0 28px}
+  h3.sub{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;font-size:26px;margin:34px 0 10px}
+
+  .why{background:var(--sage-bg);border-left:6px solid var(--sage);padding:24px 26px;margin:0}
+  .why .eyebrow{color:var(--sage)}
+  .why p{margin:8px 0 0}
+
+  /* Flow strip */
+  .flow{display:grid;gap:0;border:2px solid var(--ink);background:#fff}
+  .flow div{padding:18px 20px;border-bottom:2px solid var(--ink)}
+  .flow div:last-child{border-bottom:0}
+  .flow b{font-family:"Anton",sans-serif;font-weight:400;color:var(--red);font-size:22px;margin-right:10px}
+
+  /* Tool cards */
+  .cards{display:grid;gap:22px}
+  .card{background:#fff;border:2px solid var(--ink);padding:26px 22px 24px}
+  .card.alt{background:var(--cream-2)}
+  .card h3{font-size:clamp(30px,5.4vw,42px);margin:8px 0 6px}
+  .card .who{font-weight:700;margin:0 0 12px}
+  .card ul{margin:0 0 16px;padding-left:20px;color:var(--ink-soft)}
+  .card li{margin:4px 0}
+  .badges{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 6px}
+  .badge{display:inline-block;font-family:"Anton",sans-serif;letter-spacing:.12em;font-size:13px;text-transform:uppercase;padding:4px 10px 3px;background:var(--ink);color:var(--cream)}
+  .badge.red{background:var(--red)}
+  .badge.sage{background:var(--sage)}
+  .card .label{font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:15px;color:var(--red);margin:18px 0 8px}
+  ol.mini{margin:0 0 6px;padding-left:22px}
+  ol.mini li{margin:6px 0}
+  .small{font-size:15px;color:var(--ink-soft)}
+
+  /* Buttons */
+  .btn-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+  .btn{display:inline-block;background:var(--red);color:var(--cream);text-decoration:none;font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:16px;padding:14px 20px 12px;border:0;cursor:pointer;transition:background .15s}
+  .btn:hover{background:var(--red-deep)}
+  .btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--cream)}
+
+  /* Code */
+  .code{position:relative;background:var(--code);color:#F3E9DA;padding:16px 16px;margin:8px 0}
+  .code pre{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:14px;line-height:1.6;white-space:pre-wrap;word-break:break-word;padding-right:84px}
+  .code .copy{position:absolute;top:10px;right:10px;font-family:"Anton",sans-serif;letter-spacing:.1em;text-transform:uppercase;font-size:13px;background:var(--red);color:#fff;border:0;padding:8px 12px 6px;cursor:pointer}
+  .code .copy:hover{background:var(--red-deep)}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 4px}
+  .tab{font:inherit;font-weight:700;font-size:14px;border:2px solid var(--ink);background:transparent;padding:6px 14px;cursor:pointer;color:var(--ink)}
+  .tab[aria-selected="true"]{background:var(--ink);color:var(--cream)}
+
+  /* Compare table */
+  .table-wrap{overflow-x:auto;border:2px solid var(--ink);background:#fff}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:16px}
+  th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.06em;background:var(--ink);color:var(--cream);font-size:15px}
+  tr:last-child td{border-bottom:0}
+  td:first-child{font-weight:700}
+
+  /* Steps */
+  .steps{list-style:none;padding:0;margin:0;counter-reset:s;border-top:2px solid var(--ink)}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:64px 1fr;gap:16px;padding:20px 0;border-bottom:2px solid var(--ink)}
+  .steps li::before{content:counter(s);font-family:"Anton",sans-serif;font-size:48px;line-height:.9;color:var(--red)}
+  .steps h4{font-family:"Anton",sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.03em;font-size:22px;margin:0 0 4px}
+  .steps p{margin:0;color:var(--ink-soft)}
+
+  /* Math box */
+  .math{background:var(--ink);color:var(--cream);padding:24px 24px;margin:26px 0 0}
+  .math .eyebrow{color:#FF8A8C}
+  .math p{margin:8px 0 0}
+  .math .big{font-family:"Anton",sans-serif;font-size:clamp(24px,5vw,34px);letter-spacing:.02em;line-height:1.2;margin-top:10px}
+
+  .note{background:#fff;border:2px solid var(--ink);padding:18px 20px;margin:12px 0}
+  .note b{color:var(--red)}
+
+  /* Checklist */
+  .check{list-style:none;padding:0;margin:0;display:grid;gap:10px}
+  .check li{background:#fff;border:2px solid var(--ink);padding:14px 16px 14px 52px;position:relative}
+  .check li::before{content:"";position:absolute;left:16px;top:17px;width:20px;height:20px;border:3px solid var(--red)}
+  .check b{display:block}
+
+  /* CTA band */
+  .cta-band{background:var(--red);padding:66px 0;margin-top:76px}
+  .cta-card{background:var(--cream);padding:32px 26px 30px;margin-bottom:22px}
+  .cta-card:last-child{margin-bottom:0}
+  .cta-card h3{font-size:clamp(30px,6vw,46px);margin:10px 0 14px}
+  .cta-card p{margin:0 0 20px;color:var(--ink-soft);max-width:56ch}
+  .keyword{display:inline-block;font-family:"Anton",sans-serif;font-size:clamp(44px,10vw,72px);color:var(--red);letter-spacing:.06em;line-height:1;border:3px dashed var(--red);padding:12px 22px 8px;margin:4px 0 18px}
+
+  footer.site{padding:52px 0 58px;text-align:center;color:var(--ink-soft);font-size:16px}
+  footer.site .name{font-family:"Anton",sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:26px;color:var(--ink)}
+  footer.site .title{margin:4px 0 12px}
+  footer.site a{color:var(--red);font-weight:700;text-decoration:none}
+  footer.site .fine{margin:22px auto 0;font-size:13px;max-width:60ch}
+  footer.site .copy{margin-top:18px;font-size:15px}
+
+  .toast{position:fixed;left:50%;bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--cream);font-weight:700;padding:10px 20px;opacity:0;transition:.25s;pointer-events:none;z-index:10}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+  @media (min-width:760px){
+    .wrap{padding:0 24px}
+    .flow{grid-template-columns:repeat(4,1fr)}
+    .flow div{border-bottom:0;border-right:2px solid var(--ink)}
+    .flow div:last-child{border-right:0}
+    .card{padding:30px 30px 28px}
+  }
+  @media (max-width:520px){
+    body{font-size:17px}
+    .steps li{grid-template-columns:46px 1fr}
+    .steps li::before{font-size:38px}
+  }
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="brand display" href="https://www.instagram.com/aiwithunnati/" target="_blank" rel="noopener">AI with Unnati</a>
+  <nav aria-label="Guide sections">
+    <a href="#footage">Footage</a>
+    <a href="#tools">The tools</a>
+    <a href="#paid">Get paid</a>
+    <a href="#plan">48-hour plan</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="byline">
+      <span>A free guide by <strong>Unnati Tripathi</strong></span>
+      <a class="chip" href="https://www.instagram.com/aiwithunnati/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+        @aiwithunnati
+      </a>
+    </div>
+
+    <span class="tag display">GTA 6 · Clipping</span>
+    <h1 class="display">Learn clipping before GTA 6 drops</h1>
+    <p class="lede">GTA 6 releases on November 19th. Every big streamer will play it for hours, and someone has to turn those streams into short, viral clips. People get paid to do that. Here's exactly how to start for free: the tools, the websites, and every step in between.</p>
+
+    <div class="countdown" aria-label="What this guide covers">
+      <div><b>3</b><span>Free GitHub tools</span></div>
+      <div><b>3</b><span>Places to get paid</span></div>
+      <div><b>₹0</b><span>To start</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT IS CLIPPING -->
+<section class="block" style="padding-top:54px">
+  <div class="wrap">
+    <div class="why">
+      <span class="eyebrow">What is clipping?</span>
+      <p>You take a long video, usually a stream, podcast or interview, and cut out the best 15–60 second moments. You turn them vertical (9:16), add captions, and post them on TikTok, Instagram Reels or YouTube Shorts. Brands and streamers pay clippers for the views those clips get, or hire clippers directly to run their short-form content.</p>
+    </div>
+
+    <h3 class="sub">The whole process in 4 steps</h3>
+    <div class="flow">
+      <div><b>01</b>Get footage you're allowed to use</div>
+      <div><b>02</b>Cut it with a free AI tool</div>
+      <div><b>03</b>Post it on your own accounts</div>
+      <div><b>04</b>Submit it and get paid per view</div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 1 FOOTAGE -->
+<section class="block" id="footage">
+  <div class="wrap">
+    <span class="eyebrow">Step 01</span>
+    <h2 class="display">Get footage you're allowed to clip</h2>
+    <p class="intro">This is the step most beginners skip, and it's the reason clips get rejected or taken down. Only clip footage you have permission to reuse.</p>
+
+    <ol class="steps">
+      <li><div><h4>Easiest: use a campaign's footage</h4><p>Every clipping campaign (more on these in Step 04) tells you exactly which videos or streams to clip. Some give you a folder of footage; some name the channel. If you join a campaign first, the permission part is handled.</p></div></li>
+      <li><div><h4>Or: work for a streamer directly</h4><p>If a streamer hires you, they're giving you permission. Get it in writing, even if it's just a DM.</p></div></li>
+      <li><div><h4>Copy the video link</h4><p>On YouTube, open the stream or video and copy the link from the address bar or the Share button. All three tools below take a YouTube link or a video file you've downloaded.</p></div></li>
+      <li><div><h4>Practise on anything for now</h4><p>You don't need GTA 6 to learn this. Practise on any long gaming stream or podcast you're allowed to use, and keep those practice clips private until you have permission to post them.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- STEP 2 TOOLS -->
+<section class="block" id="tools">
+  <div class="wrap">
+    <span class="eyebrow">Step 02 · The tools</span>
+    <h2 class="display">3 free GitHub tools that clip for you</h2>
+    <p class="intro">All three are free and open source (MIT licence). They find the best moments in a long video, turn them vertical and add captions. They run on your own computer, so there's no subscription and no watermark. Pick one; you don't need all three.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Tool</th><th>Best for</th><th>Needs</th><th>API key?</th></tr></thead>
+        <tbody>
+          <tr><td>Chopify</td><td>Beginners and gameplay. Spots action, reactions and big moments even with little talking</td><td>Python + FFmpeg (the installer sets this up). Windows is the main target; Mac/Linux work too</td><td>No</td></tr>
+          <tr><td>AutoClip</td><td>A normal desktop app you just install and open, with ready-to-post packs for TikTok, Reels and Shorts</td><td>Mac (Apple Silicon) or Windows 10/11</td><td>Yes, or a free local model</td></tr>
+          <tr><td>OpenShorts</td><td>The most features: face tracking, hook text, clip editor, and auto-posting</td><td>Docker and 8GB+ RAM</td><td>Yes (free Gemini key), or a local model</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cards" style="margin-top:26px">
+
+      <!-- CHOPIFY -->
+      <article class="card">
+        <div class="badges"><span class="badge red">Easiest start</span><span class="badge">No API key</span><span class="badge sage">Great for gameplay</span></div>
+        <h3 class="display">Chopify</h3>
+        <p class="who">Free local AI clipper for Shorts, Reels and TikTok, with a browser dashboard.</p>
+        <ul>
+          <li>Paste a video file or a YouTube link and click <strong>Find clips</strong></li>
+          <li>Listens and watches for reactions, laughs, impacts and gameplay moments, so it works for streams with little talking</li>
+          <li>13 caption styles, an editor to fix words, MP4 + subtitle (SRT) export</li>
+          <li>No account, no API key, no uploads to the cloud</li>
+        </ul>
+
+        <p class="label">How to install it</p>
+        <ol class="mini">
+          <li>Open <strong>PowerShell</strong> (Windows) or <strong>Terminal</strong> (Mac/Linux).</li>
+          <li>Paste the command for your computer and press Enter. It checks for Git, Python 3.11+ and FFmpeg, installs what's missing, downloads Chopify and opens it in your browser.</li>
+        </ol>
+        <div class="tabs" role="tablist" aria-label="Choose your computer">
+          <button class="tab" role="tab" aria-selected="true" data-group="chop" data-tab="win">Windows</button>
+          <button class="tab" role="tab" aria-selected="false" data-group="chop" data-tab="mac">Mac / Linux</button>
+        </div>
+        <div class="code" data-group="chop" data-panel="win"><pre>irm https://raw.githubusercontent.com/mehbul/chopify/main/install.ps1 | iex</pre><button class="copy">Copy</button></div>
+        <div class="code" data-group="chop" data-panel="mac" hidden><pre>curl -fsSL https://raw.githubusercontent.com/mehbul/chopify/main/install.sh | bash</pre><button class="copy">Copy</button></div>
+        <p class="small">Want to see what the command does before you run it? The installer files are short and commented on the GitHub page.</p>
+
+        <p class="label">How to use it</p>
+        <ol class="mini">
+          <li>Chopify Studio opens at <strong>http://127.0.0.1:8765</strong> in your browser.</li>
+          <li>Paste the video link or file path and click <strong>Find clips</strong>. Add several links on separate lines to queue them.</li>
+          <li>Review the suggested clips, fix any caption mistakes, and pick a look in <strong>Caption Studio</strong>.</li>
+          <li>Export as <strong>9:16</strong> and download your clips.</li>
+        </ol>
+        <p class="small">If YouTube links don't download on Windows, install Deno (<code>winget install DenoLand.Deno</code>) and restart your terminal.</p>
+
+        <div class="btn-row">
+          <a class="btn" href="https://github.com/mehbul/chopify" target="_blank" rel="noopener">Chopify on GitHub</a>
+          <a class="btn ghost" href="https://mehbul.github.io/chopify/" target="_blank" rel="noopener">Live tour</a>
+        </div>
+      </article>
+
+      <!-- AUTOCLIP -->
+      <article class="card alt">
+        <div class="badges"><span class="badge red">Desktop app</span><span class="badge">10k+ GitHub stars</span></div>
+        <h3 class="display">AutoClip</h3>
+        <p class="who">"One link, one click." Paste a link, choose your platform, and get finished clips with covers and captions you can post.</p>
+        <ul>
+          <li>Makes up to 10 clips per platform, ranked by score, with extra options you can generate on demand</li>
+          <li>Formats for TikTok, Reels and YouTube Shorts automatically</li>
+          <li>Each clip comes with a cover, title, description and hashtags</li>
+          <li>Editing and rendering happen on your computer. The app is free; if you use a cloud AI model, that model charges a small amount per use</li>
+        </ul>
+
+        <p class="label">How to install it</p>
+        <ol class="mini">
+          <li>Go to the <strong>Releases</strong> page (button below).</li>
+          <li>Download the right file. Mac with Apple Silicon (M1/M2/M3/M4): the <strong>.dmg</strong>. Windows 10/11: the <strong>-setup.exe</strong>. Python and FFmpeg come bundled.</li>
+          <li>Install it and open it like any other app.</li>
+        </ol>
+        <p class="small">Intel Mac or Linux? There's no desktop installer yet. Use the Docker or CLI version from the GitHub page instead.</p>
+
+        <p class="label">How to use it</p>
+        <ol class="mini">
+          <li><strong>Try the example first.</strong> On the home screen, open the built-in example project. It needs no API key, so you can see what it makes.</li>
+          <li><strong>Set up a model.</strong> In Settings, choose an AI provider, paste its API key, test the connection and save. Or run a free local model with Ollama or LM Studio instead.</li>
+          <li><strong>Paste your link.</strong> Choose TikTok, Reels or YouTube Shorts and let it generate.</li>
+          <li><strong>Check, then download.</strong> Preview each clip, check the captions and framing, and download the publish pack.</li>
+        </ol>
+
+        <div class="btn-row">
+          <a class="btn" href="https://github.com/zhouxiaoka/autoclip/releases/latest" target="_blank" rel="noopener">Download AutoClip</a>
+          <a class="btn ghost" href="https://github.com/zhouxiaoka/autoclip/blob/main/README-EN.md" target="_blank" rel="noopener">English guide on GitHub</a>
+        </div>
+      </article>
+
+      <!-- OPENSHORTS -->
+      <article class="card">
+        <div class="badges"><span class="badge red">Most powerful</span><span class="badge">Docker</span><span class="badge sage">Free cloud option</span></div>
+        <h3 class="display">OpenShorts</h3>
+        <p class="who">The open-source alternative to OpusClip. Turns long videos into 9:16 clips for Shorts, TikTok and Reels.</p>
+        <ul>
+          <li>Picks 3–15 moments of 15–60 seconds, each with a virality score and titles for every platform</li>
+          <li>Face tracking keeps the streamer in frame; two people on camera get stacked</li>
+          <li>Auto captions, an editable hook line at the start, and a full clip editor</li>
+          <li>Self-hosted is free forever, with no watermark and no limits</li>
+        </ul>
+
+        <p class="label">How to install it</p>
+        <ol class="mini">
+          <li>Install <a href="https://www.docker.com/products/docker-desktop/" target="_blank" rel="noopener">Docker Desktop</a> and open it. You need 8GB+ of RAM.</li>
+          <li>Get a free <a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener">Google Gemini API key</a>. It powers the moment-picking. (Prefer fully local? It also works with Ollama or LM Studio.)</li>
+          <li>Open Terminal and run these, one after the other:</li>
+        </ol>
+        <div class="code"><pre>git clone https://github.com/mutonby/openshorts.git
+cd openshorts
+docker compose up --build</pre><button class="copy">Copy</button></div>
+        <p class="small">The first build downloads a lot, so give it a while.</p>
+
+        <p class="label">How to use it</p>
+        <ol class="mini">
+          <li>Open <strong>http://localhost:5175</strong> in your browser.</li>
+          <li>Go to <strong>Settings</strong> and paste your Gemini key. You only need the other keys for extras like dubbing and auto-posting.</li>
+          <li>Open <strong>Clip Generator</strong>, paste a YouTube link or upload a file, and wait. On a normal computer an 8-minute video takes about 5–8 minutes.</li>
+          <li>Open any clip in the editor to trim words, change framing or edit the hook, then download.</li>
+        </ol>
+        <div class="note"><b>Don't want to install anything?</b> <a href="https://www.openshorts.app/" target="_blank" rel="noopener">openshorts.app</a> is the same software online. The free plan clips your first video (up to 60 minutes), then 20 minutes a month, with a watermark. Paid plans start at $12/month.</div>
+
+        <div class="btn-row">
+          <a class="btn" href="https://github.com/mutonby/openshorts" target="_blank" rel="noopener">OpenShorts on GitHub</a>
+          <a class="btn ghost" href="https://www.openshorts.app/" target="_blank" rel="noopener">OpenShorts Cloud</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- STEP 3 POST -->
+<section class="block" id="post">
+  <div class="wrap">
+    <span class="eyebrow">Step 03</span>
+    <h2 class="display">Make it a clip people finish</h2>
+    <p class="intro">The AI finds the moments. You decide which ones are worth posting. Check every clip before it goes up.</p>
+
+    <ol class="steps">
+      <li><div><h4>Hook in the first 2 seconds</h4><p>Start on the reaction, the crash, the line. Cut the slow lead-up.</p></div></li>
+      <li><div><h4>Make it make sense alone</h4><p>Someone scrolling has no context. If they need the last 10 minutes to get it, skip that clip.</p></div></li>
+      <li><div><h4>Captions on, always</h4><p>Most people scroll on mute. All three tools burn captions in; fix any wrong words first.</p></div></li>
+      <li><div><h4>Follow the campaign brief exactly</h4><p>Some campaigns require a disclosure at the start, certain hashtags or tags, or a specific length. Don't cut a moment so it changes what the streamer meant.</p></div></li>
+      <li><div><h4>Post from your own account</h4><p>Use a TikTok, Instagram, YouTube or X account you control. Making a separate account just for gaming clips keeps your feed and stats clean.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- STEP 4 GET PAID -->
+<section class="block" id="paid">
+  <div class="wrap">
+    <span class="eyebrow">Step 04 · The money</span>
+    <h2 class="display">3 places to get paid for clips</h2>
+    <p class="intro"><strong>Option 1:</strong> join paid clipping campaigns, where you get paid for the views your clips get. These three work together: Content Rewards lists the campaigns, Whop handles your account and payouts, and Amplify Media is a clipping agency whose campaigns run through them. <strong>Option 2</strong> (pitching streamers directly) is further down.</p>
+
+    <div class="cards">
+
+      <!-- CONTENT REWARDS -->
+      <article class="card">
+        <div class="badges"><span class="badge red">Start here</span><span class="badge">Pay per 1,000 views</span></div>
+        <h3 class="display">Content Rewards</h3>
+        <p class="who">A marketplace of clipping campaigns. Brands, creators and streamers fund a campaign, and you're paid for the views your clips get.</p>
+
+        <p class="label">How to join and get paid</p>
+        <ol class="mini">
+          <li><strong>Sign up as a creator</strong> on Content Rewards. It runs on Whop, so you'll use a Whop account.</li>
+          <li><strong>Connect the account you'll post from</strong>: TikTok, Instagram, YouTube, X or Facebook.</li>
+          <li><strong>Open Discover</strong> and compare campaigns. Each one shows the rate per 1,000 views, the minimum payout, the maximum per clip, which platforms count, and how much budget is left. Look for <em>gaming</em> and <em>streamer</em> campaigns.</li>
+          <li><strong>Join or apply.</strong> Some campaigns accept you straight away; others review you first. Open campaigns have no follower minimum.</li>
+          <li><strong>Read the brief and rules</strong>: which footage to use, length, hashtags, disclosure.</li>
+          <li><strong>Post your clip</strong>, then <strong>submit its link within 30 minutes</strong> of posting.</li>
+          <li><strong>Wait for review.</strong> The campaign's own team approves or rejects it against the brief.</li>
+          <li><strong>Get paid.</strong> Payouts run about every 10 days (7 days of earning plus a 3-day hold), for up to 30 days after you submit. Content Rewards takes a 10% creator fee. Money moves to your Whop Balance, and you withdraw from there.</li>
+        </ol>
+        <p class="small">Typical streamer campaigns pay roughly $0.75–$1 per 1,000 views, and some gaming campaigns pay more. Rates change all the time, so always check the live listing.</p>
+        <div class="btn-row">
+          <a class="btn" href="https://contentrewards.com/c/discover" target="_blank" rel="noopener">Browse campaigns</a>
+          <a class="btn ghost" href="https://contentrewards.com" target="_blank" rel="noopener">Content Rewards</a>
+        </div>
+      </article>
+
+      <!-- WHOP -->
+      <article class="card alt">
+        <div class="badges"><span class="badge red">Your account &amp; payouts</span></div>
+        <h3 class="display">Whop</h3>
+        <p class="who">The platform Content Rewards runs on. It's where your money lands, and where clipping agencies and communities live.</p>
+
+        <p class="label">How to set it up</p>
+        <ol class="mini">
+          <li><strong>Create a free Whop account</strong> at whop.com. Use the same account for Content Rewards.</li>
+          <li><strong>Set up payouts</strong> in your Whop Balance using the withdrawal options Whop shows for your country, so you're ready before your first payout.</li>
+          <li><strong>Find clipping communities</strong> on Whop Discover. Clipping agencies (like Amplify Media below) post their campaigns, feedback channels and tips there.</li>
+          <li><strong>Track everything in one place:</strong> submissions, approvals and pending earnings show up in your Whop account.</li>
+        </ol>
+        <p class="small">Free to join. Before you pay for any "clipping course" or paid group on Whop, remember that you don't need one. Open campaigns are free to join.</p>
+        <div class="btn-row">
+          <a class="btn" href="https://whop.com" target="_blank" rel="noopener">Create a Whop account</a>
+          <a class="btn ghost" href="https://whop.com/discover/" target="_blank" rel="noopener">Whop Discover</a>
+        </div>
+      </article>
+
+      <!-- AMPLIFY -->
+      <article class="card">
+        <div class="badges"><span class="badge red">Clipping agency</span><span class="badge">Free to join</span><span class="badge sage">Discord support</span></div>
+        <h3 class="display">Amplify Media</h3>
+        <p class="who">A UK clipping agency running TV, film, games, brand and music campaigns, with 1,000+ clippers.</p>
+
+        <p class="label">How to join</p>
+        <ol class="mini">
+          <li><strong>Join their free Whop community</strong> at whop.com/amplifymedia.</li>
+          <li><strong>Create an account on their clipper page</strong> and connect your <strong>Discord</strong> and <strong>TikTok</strong>.</li>
+          <li><strong>Read their beginner guide</strong> on how to clip, then introduce your niche (say "gaming") and share an edit in their Discord for feedback.</li>
+          <li><strong>Find their open campaigns on Content Rewards</strong>, read the full brief and Campaign Rules, and submit your clip links through that campaign.</li>
+        </ol>
+        <p class="small">Open campaigns need no paid membership. "Alpha" is an optional application for private briefs, so check any cost before applying. Only approved views are paid.</p>
+        <div class="btn-row">
+          <a class="btn" href="https://whop.com/amplifymedia/" target="_blank" rel="noopener">Join on Whop</a>
+          <a class="btn ghost" href="https://amplifymedia.live/clippers" target="_blank" rel="noopener">Clipper sign-up</a>
+          <a class="btn ghost" href="https://amplifymedia.live/how-to-clip/" target="_blank" rel="noopener">Beginner guide</a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="math">
+      <span class="eyebrow">How the money works</span>
+      <p>Earnings = (views ÷ 1,000) × the campaign's rate, up to the campaign's max per clip, minus the 10% fee.</p>
+      <p class="big">100,000 views × $1 per 1,000 = $100 → $90 after the fee</p>
+      <p>A clip also has to reach the campaign's minimum payout before it's reviewed. Ten clips at 20,000 views each pays the same as one at 200,000, so post consistently.</p>
+    </div>
+
+    <h3 class="sub">Option 2: pitch streamers directly</h3>
+    <p>Don't want to rely on campaigns? Offer to run a streamer's short-form content for a monthly fee. Smaller and mid-size streamers who'll be playing GTA 6 are the easiest to land.</p>
+    <ol class="steps">
+      <li><div><h4>Make 3 sample clips first</h4><p>Use their footage only as private samples, or footage you're allowed to use. Send the clips themselves, not a promise.</p></div></li>
+      <li><div><h4>Find their business contact</h4><p>Check their channel's About page, their Twitch or Kick panels, or their pinned links for a business email or Discord.</p></div></li>
+      <li><div><h4>Send a short, specific message</h4><p>Copy this and personalise it:</p></div></li>
+    </ol>
+    <div class="code"><pre>Hi [name]! I'm a short-form editor and I clipped 3 moments from your recent stream as samples: [links]. When you start GTA 6, I can turn every stream into daily Shorts, Reels and TikToks with captions, so you get more reach without the extra work. Want me to do a free week so you can see the results?</pre><button class="copy">Copy</button></div>
+  </div>
+</section>
+
+<!-- GOOD TO KNOW -->
+<section class="block">
+  <div class="wrap">
+    <span class="eyebrow">Read this before you start</span>
+    <h2 class="display">Good to know</h2>
+    <div class="note"><b>Budgets run out.</b> Campaigns have a fixed budget. Once it's spent, new views stop paying, even good ones. Join campaigns early and check how much budget is left.</div>
+    <div class="note"><b>Earnings aren't guaranteed.</b> Only approved clips with real views get paid. Treat the rates on this page as examples; the live campaign page is what counts.</div>
+    <div class="note"><b>Never buy views or use bots.</b> Campaign teams review every submission. Fake engagement gets clips rejected and accounts removed.</div>
+    <div class="note"><b>You don't need to own GTA 6.</b> You're editing other people's streams, not playing. A normal laptop and one of the free tools above is enough to start.</div>
+  </div>
+</section>
+
+<!-- 48 HOUR PLAN -->
+<section class="block" id="plan">
+  <div class="wrap">
+    <span class="eyebrow">Your plan</span>
+    <h2 class="display">Ready in 48 hours</h2>
+    <p class="intro">Do these in order and you'll be posting on launch day.</p>
+    <ul class="check">
+      <li><b>Today: install one tool</b>Chopify if you want the easiest start, AutoClip if you want a desktop app, OpenShorts if you want the most control.</li>
+      <li><b>Today: make 5 practice clips</b>Use any long gaming stream you're allowed to use. Learn the editor and caption styles.</li>
+      <li><b>Today: set up your accounts</b>Create a Whop account, sign up on Content Rewards, and connect your TikTok / Instagram / YouTube.</li>
+      <li><b>Tomorrow: join campaigns</b>Find gaming and streamer campaigns on Content Rewards, and join Amplify Media's Discord.</li>
+      <li><b>Tomorrow: pitch 5 streamers</b>Send the message above with your 3 best sample clips.</li>
+      <li><b>Launch day: clip and post</b>Clip the biggest moments fast, post, and submit each link within 30 minutes.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="wrap">
+
+    <div class="cta-card">
+      <span class="eyebrow">Got here from the reel?</span>
+      <h3 class="display">Share it with a friend who games</h3>
+      <div class="keyword">GTSX</div>
+      <p>Comment GTSX on the reel and this guide comes to your DMs. Send it to the friend who's already counting down to GTA 6.</p>
+      <a class="btn" href="https://www.instagram.com/aiwithunnati/" target="_blank" rel="noopener">Go to @aiwithunnati</a>
+    </div>
+
+    <div class="cta-card">
+      <span class="eyebrow">Keep learning</span>
+      <h3 class="display">Follow for more free guides</h3>
+      <p>AI tools, side income ideas and step-by-step guides like this one, every week.</p>
+      <a class="btn" href="https://www.instagram.com/aiwithunnati/" target="_blank" rel="noopener">Follow @aiwithunnati</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="name">Unnati Tripathi</div>
+    <div class="title">AI Educator &amp; Content Creator · CEO &amp; Co-Founder, Maester Labs</div>
+    <a href="https://www.instagram.com/aiwithunnati/" target="_blank" rel="noopener">@aiwithunnati</a>
+    <p class="fine">An independent guide, not affiliated with Rockstar Games, Content Rewards, Whop, Amplify Media or the tool authors. All credit for OpenShorts (mutonby), AutoClip (zhouxiaoka) and Chopify (mehbul) goes to their creators. Rates, fees and features change, so check each official page before you start. Links checked on 17 November 2026.</p>
+    <div class="copy">© 2026 Unnati Tripathi. All rights reserved.</div>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite">Copied</div>
+
+<script>
+(function(){
+  var toast=document.getElementById('toast'),tm;
+  function show(){toast.classList.add('show');clearTimeout(tm);tm=setTimeout(function(){toast.classList.remove('show')},1500)}
+  function fallback(txt){var ta=document.createElement('textarea');ta.value=txt;ta.setAttribute('readonly','');ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy')}catch(e){}document.body.removeChild(ta)}
+  document.querySelectorAll('.code .copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var txt=b.parentElement.querySelector('pre').textContent;
+      var done=function(){b.textContent='Copied';show();setTimeout(function(){b.textContent='Copy'},1400)};
+      if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(txt).then(done,function(){fallback(txt);done()})}else{fallback(txt);done()}
+    });
+  });
+  document.querySelectorAll('.tab').forEach(function(tab){
+    tab.addEventListener('click',function(){
+      var g=tab.getAttribute('data-group'),k=tab.getAttribute('data-tab');
+      document.querySelectorAll('.tab[data-group="'+g+'"]').forEach(function(x){x.setAttribute('aria-selected',x===tab?'true':'false')});
+      document.querySelectorAll('.code[data-group="'+g+'"]').forEach(function(p){p.hidden=p.getAttribute('data-panel')!==k});
+    });
+  });
+})();
+</script>
+</body>
+</html>
